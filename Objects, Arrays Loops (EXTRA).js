@@ -27,7 +27,12 @@ for (let i = 0; i < myArray.length; i++) {
 }
 console.log('This is the highest number:', highestNumber)
 
-// withM ath.max()
+// with reduce 
+console.log('Highest number calculated with reduce:', myArray.reduce(
+    (prev, current) => prev > current ? prev : current
+));
+
+// withMath.max()
 console.log(Math.max(...myArray));
 
 /* EXTRA 3
@@ -46,12 +51,19 @@ for (let i = 0; i < myArray.length; i++) {
 }
 console.log('This is the lowest number:', lowestNumber)
 
+// with reduce 
+console.log('Lowest number calculated with reduce', myArray.reduce(
+    (prev, current) => prev > current ? current : prev
+));
+
 // withMath.min()
 console.log(Math.min(...myArray));
 
 /* EXTRA 4
  Write a piece of code for getting only even numerical values from an array.
 */
+
+/* WRITE YOUR ANSWER HERE */
 let newArray = [34, 12, 2, 13, 6, 8]
 
 for (let i = 0; i < newArray.length; i++) {
@@ -61,29 +73,37 @@ for (let i = 0; i < newArray.length; i++) {
     }
 }
 
-/* WRITE YOUR ANSWER HERE */
+// with filter
+console.log(newArray.filter(item => item % 2 === 0))
 
 /* EXTRA 5
  Write a piece of code for deleting only even entries from an array.
 */
 
-for (let i = 0; i < newArray.length; i++) {
-    for (let j = 0; j < newArray.length; j++) {
-        if (newArray[j] % 2 === 1) {
-            newArray.splice(j, 1)
+/* WRITE YOUR ANSWER HERE */
+
+let newArray2 = [34, 12, 2, 13, 6, 8]
+for (let i = 0; i < newArray2.length; i++) {
+    for (let j = 0; j < newArray2.length; j++) {
+        if (newArray2[j] % 2 === 1) {
+            newArray2.splice(j, 1)
         }
     }
 }
-
-/* WRITE YOUR ANSWER HERE */
+// with filter
+console.log('Only odd numbers: ', newArray.filter(item => item % 2 !== 0))
 
 /* EXTRA 6
  Write a piece of code for removing all the vowels from a string.
 */
 
 
+/* WRITE YOUR ANSWER HERE */
+
+
 let vowelsArr = ['a', 'e', 'i', 'o', 'u']
 let randomString = 'RrMZhIO5whbzlM7sixGt';
+
 randomString = randomString.toLowerCase();
 randomString = randomString.split('');
 
@@ -93,11 +113,12 @@ for (let i = 0; i < randomString.length; i++) {
     }
 
 }
-console.log(randomString.join(''));
 
+// with filter
+console.log('No voules here:', randomString.filter(item => !vowelsArr.includes(item)));
 
+//console.log('A little test:', randomString.toLowerCase().split());
 
-/* WRITE YOUR ANSWER HERE */
 
 /* EXTRA 7
  Write a piece of code for increasing all the numerical values in a array by 1.
@@ -129,3 +150,8 @@ for (let i = 0; i < arrOfWords.length; i++) {
 }
 
 console.log(arrOfWords);
+
+// with map
+console.log(arrOfWords.map(item => item = item.length));
+
+
